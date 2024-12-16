@@ -7,6 +7,7 @@ let end;
 let start;
 let boundaries;
 let status_display; 
+let gameArea;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -48,12 +49,14 @@ function loadPage(){
     start = document.getElementById("start");
     boundaries = document.getElementsByClassName("boundary");
     status_display =  document.getElementById("status");
+    gameArea=document.getElementById("game");
 
     end.addEventListener("mouseover", endGame);
     start.addEventListener("click", startGame);
     for(let i = 0; i < boundaries.length; i++){
         boundaries[i].addEventListener("mouseover", gameOver);
     }
+    gameArea.addEventListener("mouseleave",gameOver);
 }
 
 
